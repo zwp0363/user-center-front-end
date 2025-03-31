@@ -10,18 +10,16 @@ const Footer: React.FC = () => {
         {
           key: 'planet',
           title: '知识星球',
-          href: 'https://docs.qq.com/doc/DUG93dVNHbVZjZXpo',
+          href: 'https://www.yuque.com/dashboard/books',
           blankTarget: true, // 默认打开新页面
         },
         {
-          key: 'codeFather',
-          title: '编程导航',
-          href: 'https://www.codefather.cn',
-          blankTarget: true,
-        },
-        {
           key: 'github',
-          title: <><GithubOutlined /> zwp GitHub</>,
+          title: (
+            <>
+              <GithubOutlined /> zwp GitHub
+            </>
+          ),
           href: 'https://github.com/zwp0363',
           blankTarget: true,
         },

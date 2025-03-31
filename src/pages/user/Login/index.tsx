@@ -1,19 +1,12 @@
 import Footer from '@/components/Footer';
 import { login } from '@/services/ant-design-pro/api';
-import {
-  LockOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-import {
-  LoginForm,
-  ProFormCheckbox,
-  ProFormText,
-} from '@ant-design/pro-components';
-import {Alert, Divider, message, Tabs} from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LoginForm, ProFormCheckbox, ProFormText } from '@ant-design/pro-components';
+import { Alert, Divider, message, Tabs } from 'antd';
 import React, { useState } from 'react';
-import {history, Link, useModel} from 'umi';
+import { history, Link, useModel } from 'umi';
 import styles from './index.less';
-import {PLANET_LINK, SYSTEM_LOGO} from "@/constants";
+import { KNOWLEDGE_LINK, SYSTEM_LOGO } from '@/constants';
 const LoginMessage: React.FC<{
   content: string;
 }> = ({ content }) => (
@@ -71,8 +64,12 @@ const Login: React.FC = () => {
       <div className={styles.content}>
         <LoginForm
           logo={<img alt="logo" src={SYSTEM_LOGO} />}
-          title="编程导航知识星球"
-          subTitle={<a href={PLANET_LINK} target="_blank" rel="noreferrer">编程学习知识圈子</a>}
+          title="用户中心知识圈子"
+          subTitle={
+            <a href={KNOWLEDGE_LINK} target="_blank" rel="noreferrer">
+              编程学习知识圈子
+            </a>
+          }
           initialValues={{
             autoLogin: true,
           }}
@@ -135,14 +132,15 @@ const Login: React.FC = () => {
               自动登录
             </ProFormCheckbox>
             <Divider type="vertical" /> {/*垂直分割*/}
-            <Link to={"/user/register"}>新用户注册</Link> {/*Link to 在当前页面跳转*/}
+            <Link to={'/user/register'}>新用户注册</Link> {/*Link to 在当前页面跳转*/}
             <Divider type="vertical" />
             <a
               style={{
                 float: 'right',
               }}
-              href={PLANET_LINK}
-              target="_blank" rel="noreferrer"
+              href={KNOWLEDGE_LINK}
+              target="_blank"
+              rel="noreferrer"
             >
               忘记密码
             </a>

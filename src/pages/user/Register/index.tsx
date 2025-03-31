@@ -1,18 +1,12 @@
 import Footer from '@/components/Footer';
-import {register} from '@/services/ant-design-pro/api';
-import {
-  LockOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-import {
-  LoginForm,
-  ProFormText,
-} from '@ant-design/pro-components';
+import { register } from '@/services/ant-design-pro/api';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LoginForm, ProFormText } from '@ant-design/pro-components';
 import { message, Tabs } from 'antd';
 import React, { useState } from 'react';
 import { history, useModel } from 'umi';
 import styles from './index.less';
-import {SYSTEM_LOGO} from "@/constants";
+import { SYSTEM_LOGO } from '@/constants';
 
 const Register: React.FC = () => {
   const [type, setType] = useState<string>('account');
@@ -29,7 +23,7 @@ const Register: React.FC = () => {
 
   // 表单提交
   const handleSubmit = async (values: API.RegisterParams) => {
-    const {userPassword, checkPassword} = values;
+    const { userPassword, checkPassword } = values;
     // 校验
     if (userPassword !== checkPassword) {
       message.error('两次输入的密码不一致');
@@ -62,11 +56,11 @@ const Register: React.FC = () => {
         <LoginForm
           submitter={{
             searchConfig: {
-              submitText: '注册'
-            }
+              submitText: '注册',
+            },
           }}
           logo={<img alt="logo" src={SYSTEM_LOGO} />}
-          title="编程导航知识星球"
+          title="用户中心知识圈子"
           subTitle={'编程学习'}
           initialValues={{
             autoLogin: true,
